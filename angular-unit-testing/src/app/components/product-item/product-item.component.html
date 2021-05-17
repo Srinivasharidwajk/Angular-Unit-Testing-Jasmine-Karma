@@ -1,0 +1,47 @@
+<section class="p-3">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p id="prod-title" class="h3 text-danger">{{title}}</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ducimus incidunt nam nisi numquam officiis, praesentium sapiente similique soluta tempora? Aliquid aut commodi exercitationem fugiat ipsa laborum neque quas sed?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table text-center table-hover table-striped table-light">
+          <thead class="bg-dark text-white text-uppercase">
+            <tr>
+              <th>SNO</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{product.sno}}</td>
+              <td>
+                <img id="prod-img" [src]="product.image" alt="" width="50" height="50">
+              </td>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>
+                <i class="fa fa-minus-circle mx-1" (click)="clickDecrQty()"></i>
+                  <span id="prod-qty">{{product.qty}}</span>
+                <i class="fa fa-plus-circle mx-1" (click)="clickIncrQty()"></i>
+              </td>
+              <td id="prod-total">{{product.price * product.qty}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
